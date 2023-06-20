@@ -37,7 +37,7 @@ Docker image Url: https://hub.docker.com/repository/docker/prateeksharma03/album
  kubectl apply -f ./k8/albumapp/albumapp.yml
  
  
- # Url: http://localhost/api/album/getall      //To get list of albums from mongo db
+ # URL for Service API tier to view the records from backend tier: http://localhost/api/album/getall      
  
  
  
