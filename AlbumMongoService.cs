@@ -38,6 +38,8 @@ namespace AlbumService
                 _albums.InsertOne(new Album { Genre = "Progressive Rock", Name = "The Dark Side of the Moon", ReleaseYear = 1973, LabelName = "Harvest Records" });
                 _albums.InsertOne(new Album { Genre = "Alternative Metal", Name = "Badmotorfinger", ReleaseYear = 1991, LabelName = "A&M Records" });
                 _albums.InsertOne(new Album { Genre = "Art Rock", Name = "OK Computer", ReleaseYear = 1997, LabelName = "Parlophone, Capitol" });
+                _albums.InsertOne(new Album { Genre = "Art Rock test", Name = "OK Computer test", ReleaseYear = 1997, LabelName = "Parlophone" });
+                _albums.InsertOne(new Album { Genre = "Art Rock test A", Name = "OK Computer test B", ReleaseYear = 1997, LabelName = "Parlophone B" });
 
             }
             else
