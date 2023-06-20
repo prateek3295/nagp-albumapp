@@ -2,7 +2,7 @@
 
 Docker image Url: https://hub.docker.com/repository/docker/prateeksharma03/albumapi/general 
 
-# Steps to create docker image for album api :
+# Steps to create docker image:
 
 1. Login to docker account:
 
