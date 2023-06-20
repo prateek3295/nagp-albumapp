@@ -1,4 +1,5 @@
 # nagp-albumapp
+The aplication retrieves the list of music albums from database.
 
 Docker image Url: https://hub.docker.com/repository/docker/prateeksharma03/albumapi/general 
 
