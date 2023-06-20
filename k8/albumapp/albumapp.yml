@@ -1,0 +1,53 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: album-api
+spec:
+  selector:
+    app: album-api   
+  ports:
+    - port: 80        
+      targetPort: 80 
+  type: LoadBalancer
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: album-api
+spec:
+  # we only want one replica of our container for now
+  replicas: 1
+  selector:
+    matchLabels:
+      app: album-api
+  template:
+    metadata:
+      labels:
+        app: album-api
+    spec:
+      containers:
+        - name: album-api
+          image: prateeksharma03/albumapi:latest   # Our docker image on docker hub
+          ports:
+            - containerPort: 80           # Port that our app listens to
+          envFrom:
+          - configMapRef:
+              name: mongodb-config          
+          env:            
+            - name: MongoUserName
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret
+                  key: username
+            - name: MongoUserPassword
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret
+                  key: password
+            - name: MongoHostName
+              valueFrom:
+               configMapKeyRef:
+                name: mongodb-config
+                key: MongoHostName
+          imagePullPolicy: Always
